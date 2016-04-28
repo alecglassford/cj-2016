@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Recalls</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    </head>
+    <body>
+        <h1>Recalls data</h1>
+        <p>This list includes {{ recalls | length }} recalls.</p>
+        <table>
+            <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Type of product</th>
+                <th>Injuries</th>
+            </tr>
+        {% for r in recalls %}
+            <tr>
+                <td>
+                    <a href="{{ r['URL'] }}"><img src="{{ r['Images'][0]['URL'] }}"></a>
+                </td>
+                <td>
+                    <a href="{{ r['URL'] }}">{{r['Title']}}</a>
+                </td>
+                <td>
+                {% for p in r['Products'] %}
+                    {{ p['Name'] }}<br>
+                {% endfor %}
+                </td>
+                <td>
+                {% for i in r['Injuries'] %}
+                    {{ i['Name'] }}<br>
+                {% endfor %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    </body>
+</html>

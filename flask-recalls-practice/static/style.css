@@ -1,0 +1,14 @@
+body {
+    width: 85%;
+    margin: auto;
+    font-family: "Helvetica Neue";
+    background: #FFEEFF;
+}
+
+img {
+    max-width: 200px;
+}
+
+td {
+    border: 1px solid black;
+}
