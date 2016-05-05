@@ -1,0 +1,3 @@
+[submodule "3-charts/matplotlibsampler"]
+	path = 3-charts/matplotlibsampler
+	url = git@github.com:datademofun/matplotlibsampler.git
